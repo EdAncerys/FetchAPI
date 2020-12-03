@@ -7,7 +7,8 @@ const getText = () => {
     })
     .then((data) => {
       document.getElementById('dataOutput').innerHTML = data;
-    });
+    })
+    .catch((error) => console.log(error));
 };
 
 document.getElementById('getText').addEventListener('click', getText);
