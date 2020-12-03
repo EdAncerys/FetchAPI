@@ -5,7 +5,9 @@ const getText = () => {
     .then((res) => {
       return res.text();
     })
-    .then((data) => console.log(data));
+    .then((data) => {
+      document.getElementById('dataOutput').innerHTML = data;
+    });
 };
 
 document.getElementById('getText').addEventListener('click', getText);
