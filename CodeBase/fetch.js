@@ -33,3 +33,4 @@ const getUsers = () => {
 
 document.getElementById('getText').addEventListener('click', getText);
 document.getElementById('getUsers').addEventListener('click', getUsers);
+document.getElementById('getPosts').addEventListener('click', getPosts);
