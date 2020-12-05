@@ -1,5 +1,6 @@
 'use strict';
 
+// Fetch data from a text file
 const getText = () => {
   fetch('../Data/sampleText.txt')
     .then((res) => {
@@ -11,6 +12,7 @@ const getText = () => {
     .catch((error) => console.log(error));
 };
 
+// Fetch data from a JSON file
 const getUsers = () => {
   fetch('../Data/users.json')
     .then((res) => {
@@ -26,11 +28,12 @@ const getUsers = () => {
             <li>Email: ${user.email}</li>
           </ul>`;
       });
-      document.getElementById('userData').innerHTML = userData;
+      document.getElementById('dataOutput').innerHTML = userData;
     })
     .catch((error) => console.log(error));
 };
 
+// Fetch data from a API
 const getPosts = () => {
   fetch('https://jsonplaceholder.typicode.com/posts')
     .then((res) => {
@@ -45,7 +48,7 @@ const getPosts = () => {
             <p>Body: ${post.name}</p>
           </div>`;
       });
-      document.getElementById('userPosts').innerHTML = userPosts;
+      document.getElementById('dataOutput').innerHTML = userPosts;
     })
     .catch((error) => console.log(error));
 };
