@@ -1,3 +1,13 @@
 body {
   background-color: #8c8c8c2e;
+  margin: 0;
+  padding: 2rem;
+}
+
+.btn {
+  margin: 20px;
+}
+
+.container {
+  margin: 20px;
 }

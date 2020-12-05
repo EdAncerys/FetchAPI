@@ -9,26 +9,32 @@
   </head>
   <body>
     <h2>Fetch API</h2>
-    <button id="getText">Get Text</button>
-    <button id="getUsers">Get JSON</button>
-    <button id="getPosts">Get API data</button>
+    <button id="getText" class="btn">Get Text</button>
+    <button id="getUsers" class="btn">Get JSON</button>
+    <button id="getPosts" class="btn">Get API data</button>
 
     <div id="dataOutput"></div>
 
     <form id="addPosts">
       <div>
-        <input type="text" id="postTitle" placeholder="Title" />
+        <input
+          type="text"
+          id="postTitle"
+          placeholder="Title"
+          class="container"
+        />
       </div>
       <div>
         <textarea
           id="postBody"
-          rows="4"
-          cols="50"
+          rows="8"
+          cols="40"
           placeholder="Body"
+          class="container"
         ></textarea>
       </div>
-      <input type="submit" value="Post Article" />
+      <input type="submit" value="Post Article" class="btn" />
     </form>
-    <button id="testFetch">Async Fetch Data</button>
+    <button id="testFetch" class="btn">Async Fetch Data</button>
   </body>
 </html>
