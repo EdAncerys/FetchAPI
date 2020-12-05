@@ -53,6 +53,16 @@ const getPosts = () => {
     .catch((error) => console.log(error));
 };
 
+// Submit form to API
+
+const addPosts = (e) => {
+  e.preventDefault();
+  console.log('Send');
+};
+
 document.getElementById('getText').addEventListener('click', getText);
 document.getElementById('getUsers').addEventListener('click', getUsers);
 document.getElementById('getPosts').addEventListener('click', getPosts);
+document
+  .getElementById('addPosts')
+  .addEventListener('submit', (e) => addPosts(e));
