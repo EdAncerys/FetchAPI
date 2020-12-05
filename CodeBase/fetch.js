@@ -57,7 +57,23 @@ const getPosts = () => {
 
 const addPosts = (e) => {
   e.preventDefault();
-  console.log('Send');
+
+  const title = document.getElementById('postTitle').value;
+  const body = document.getElementById('postBody').value;
+
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({ title: title, body: body }),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error.message));
+
+  console.log(title, body);
 };
 
 document.getElementById('getText').addEventListener('click', getText);
@@ -66,3 +82,18 @@ document.getElementById('getPosts').addEventListener('click', getPosts);
 document
   .getElementById('addPosts')
   .addEventListener('submit', (e) => addPosts(e));
+
+// Async await Fetch request
+async function fetchData() {
+  let returnedData;
+
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((res) => res.json())
+    .then((data) => (returnedData = data))
+    .catch((error) => console.log(error));
+
+  console.log(returnedData);
+  return returnedData;
+}
+
+document.getElementById('testFetch').addEventListener('click', fetchData);
