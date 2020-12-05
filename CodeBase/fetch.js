@@ -31,6 +31,25 @@ const getUsers = () => {
     .catch((error) => console.log(error));
 };
 
+const getPosts = () => {
+  fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((res) => {
+      return res.json();
+    })
+    .then((posts) => {
+      let userPosts = '<h2>Posts</h2>';
+      posts.forEach((post) => {
+        userPosts += `<div>
+            <h4>UserID: ${post.userId}</h4>
+            <h4>Title: ${post.title}</h4>
+            <p>Body: ${post.name}</p>
+          </div>`;
+      });
+      document.getElementById('userPosts').innerHTML = userPosts;
+    })
+    .catch((error) => console.log(error));
+};
+
 document.getElementById('getText').addEventListener('click', getText);
 document.getElementById('getUsers').addEventListener('click', getUsers);
 document.getElementById('getPosts').addEventListener('click', getPosts);
